@@ -3,6 +3,7 @@ package mysqlApp;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 import io.vertx.reactivex.core.buffer.Buffer;
@@ -28,8 +29,25 @@ public class UserInputVerticle extends AbstractVerticle {
     @Override
     public Completable rxStart() {
 
+        final EventBus eb = vertx.eventBus();
+
+        Scanner input = new Scanner(System.in);
+        String proceed = "y";
+        while (proceed == "y") {
+            sendInput(eb, input);
+            System.out.println("Do you have any more queries? y/n ");
+            proceed = input.next();
+        }
         return Completable.complete();
 
+    }
+
+    private void sendInput(EventBus eb, Scanner input) {
+        eb.rxRequest("mariadb", input)
+            .subscribe(e -> {
+                LOGGER.debug("UserInputVerticle received reply: " + e.body());
+                System.out.println(e.body());
+            });
     }
 
 }

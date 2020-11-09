@@ -27,9 +27,42 @@ public class MariadbVerticle extends AbstractVerticle {
 
     public Completable rxStart() {
         final EventBus eb = vertx.eventBus();
-//            eb.consumer("mariadb", this::handleInsert);
+        eb.consumer("mariadb", this::handleInput);
+        eb.consumer("xdevapi", this::documentHandler);
         //Place pool options here.
         return Completable.complete();
     }
 
+    private void handleInput(Message<String> message) {
+        LOGGER.debug("MariadbVerticle received message : " + message.body());
+        final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
+            .setPort(3306)
+            .setHost("localhost")
+            .setDatabase("contact")
+            .setUser("jared")
+            .setPassword("super03");
+
+        PoolOptions poolOptions = new PoolOptions();
+
+        MySQLPool client = MySQLPool.pool(vertx, connectOptions, poolOptions);
+
+        client
+            .query(message.body())
+            .execute(ar -> {
+                if (ar.succeeded()) {
+                    RowSet<Row> result = ar.result();
+                    LOGGER.debug("Got " + result.size() + " rows ");
+                    message.reply(result);
+                } else {
+                    LOGGER.debug("Failure: " + ar.cause().getMessage());
+                    message.reply("failure");
+                }
+
+                client.close();
+            });
+    }
+
+    private void documentHandler(Message<String> message) {
+
+    }
 }
