@@ -38,7 +38,7 @@ public class MariadbVerticle extends AbstractVerticle {
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
             .setPort(3306)
             .setHost("localhost")
-            .setDatabase("contact")
+            .setDatabase("monster")
             .setUser("jared")
             .setPassword("super03");
 

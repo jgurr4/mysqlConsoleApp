@@ -1,0 +1,16 @@
+Welcome Johan!
+ Prepare for adventure!
+
+<-----------------------------------------------------------
+
+)You walk into a crossroads with 4 signs.
+Which road do you take?
+
+1: Lothlorien Mines
+2: Brigandine Forest
+3: Frost Caves
+4: Femori Dungeon Keep
+
+<-----------------------------------------------------------
+
+^19:25:16.650 [Test worker] DEBUG TestAppInit - error running TestAppInit.startAdventure()null

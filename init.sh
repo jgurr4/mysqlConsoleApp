@@ -1,5 +1,5 @@
 #!/bin/bash
-mysqladmin create contact;
+#mysqladmin create contact;
 
 #This is a test file. I will try to use it someday if I want to automate database/table/user creation.
 #Make some commands here to create a database and table set up with columns/definitions, and also

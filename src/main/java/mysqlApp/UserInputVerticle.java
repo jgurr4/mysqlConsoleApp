@@ -21,20 +21,34 @@ import io.vertx.reactivex.core.http.*;
 import io.vertx.reactivex.ext.web.*;
 import io.vertx.reactivex.ext.web.handler.BodyHandler;
 import io.vertx.reactivex.core.eventbus.EventBus;
+import java.util.Scanner;
 
 public class UserInputVerticle extends AbstractVerticle {
+
+    private String playerName;
+    private int playerHP;
+    private int playerLvl;
+    private Scanner myScanner = new Scanner(System.in);
+    private Scanner enterScanner = new Scanner(System.in);
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserInputVerticle.class);
 
     @Override
     public Completable rxStart() {
 
+        UserInputVerticle dublin;
+        dublin = new UserInputVerticle();
+        dublin.playerSetup();
+        dublin.startAdventure();
+
         final EventBus eb = vertx.eventBus();
 
-        Scanner input = new Scanner(System.in);
+        final Scanner input = new Scanner(System.in);
         String proceed = "y";
         while (proceed == "y") {
-            sendInput(eb, input);
+            System.out.println("Enter your first query: EXAMPLES: select * from monsters limit 100;");
+            String query = input.nextLine();
+            sendInput(eb, query);
             System.out.println("Do you have any more queries? y/n ");
             proceed = input.next();
         }
@@ -42,12 +56,24 @@ public class UserInputVerticle extends AbstractVerticle {
 
     }
 
-    private void sendInput(EventBus eb, Scanner input) {
-        eb.rxRequest("mariadb", input)
+    private void playerSetup() {
+    }
+
+    private void startAdventure() {
+
+    }
+
+    private void sendInput(EventBus eb, String query) {
+        eb.rxRequest("mariadb", query)
             .subscribe(e -> {
-                LOGGER.debug("UserInputVerticle received reply: " + e.body());
-                System.out.println(e.body());
-            });
+                    LOGGER.debug("UserInputVerticle received reply: " + e.body());
+                    System.out.println(e.body());
+                },
+                err -> {
+                    LOGGER.debug("Verticle Failed to communicate " + err.getMessage());
+
+                }
+            );
     }
 
 }
