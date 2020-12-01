@@ -1,3 +1,4 @@
 Next Step for my app:
+ -> After I finish with regular mysql connector/j functionality, Create mysql.java page that uses jooq and then try one that uses an orm, just so I know how to use those.
  -> Add ability for Full-text searches (like google searches) of specific monsters.
  -> Make setupdb.sql script do LOAD DATA INFILE command to automatically load the .csv file into database after it's created. Right now I'm storing the monsters.csv file in mysqldata. When I change this I'll also have to change the start_mysql file docker run command --secure-file-priv=new_directory. Or just make init.sh automatically move monsters.csv to the /var/lib/mysql/databasename.

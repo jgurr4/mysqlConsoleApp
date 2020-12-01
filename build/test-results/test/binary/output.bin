@@ -1,16 +1,274 @@
-Welcome Johan!
- Prepare for adventure!
-
-<-----------------------------------------------------------
-
-)You walk into a crossroads with 4 signs.
-Which road do you take?
-
-1: Lothlorien Mines
-2: Brigandine Forest
-3: Frost Caves
-4: Femori Dungeon Keep
-
-<-----------------------------------------------------------
-
-^19:25:16.650 [Test worker] DEBUG TestAppInit - error running TestAppInit.startAdventure()null
+Ö16:20:49.742 [Test worker] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+m16:20:49.748 [Test worker] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+p16:20:49.748 [Test worker] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+ã16:20:49.760 [Test worker] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+á16:20:49.760 [Test worker] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+m16:20:49.772 [Test worker] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+l16:20:49.804 [Test worker] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+r16:20:49.804 [Test worker] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+h16:20:49.827 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+^16:20:49.827 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11
+r16:20:49.832 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+s16:20:49.835 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+p16:20:49.839 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+t16:20:49.859 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
+Qjava.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+S	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
+Q	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:233)
+I	at java.base/java.security.AccessController.doPrivileged(Native Method)
+T	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:227)
+S	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:289)
+Q	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92)
+K	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)
+J	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)
+D	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)
+P	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)
+O	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:47)
+Y	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:86)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:81)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:68)
+R	at io.vertx.core.net.impl.transport.Transport.eventLoopGroup(Transport.java:153)
+<	at io.vertx.core.impl.VertxImpl.<init>(VertxImpl.java:143)
+:	at io.vertx.core.impl.VertxImpl.vertx(VertxImpl.java:92)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:40)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:32)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:27)
+-	at io.vertx.core.Vertx.vertx(Vertx.java:75)
+8	at io.vertx.reactivex.core.Vertx.vertx(Vertx.java:127)
+M	at io.vertx.junit5.VertxExtension$ScopedObject.get(VertxExtension.java:266)
+C	at io.vertx.junit5.VertxExtension.unpack(VertxExtension.java:135)
+T	at io.vertx.junit5.VertxExtension.getOrCreateScopedObject(VertxExtension.java:130)
+Q	at io.vertx.junit5.VertxExtension.retrieveRxJava2Vertx(VertxExtension.java:362)
+M	at io.vertx.junit5.VertxExtension.resolveParameter(VertxExtension.java:111)
+f	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameter(ExecutableInvoker.java:216)
+g	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:183)
+g	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:144)
+[	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:96)
+~	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:205)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+u	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:201)
+l	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+k	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+?	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+ö	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+?	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+ö	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+ó	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+v	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+r	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+`	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+f	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+µ	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+™	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+Ü	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+h	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+S	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+e	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+?	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+i	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+x	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+/	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+V	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+S	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+e	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+?	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+ë	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+ë	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+X	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+k	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+Z	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+^	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+^	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+j	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+4	at java.base/java.lang.Thread.run(Thread.java:834)
+v16:20:49.877 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+ì16:20:49.882 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+Ìjava.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @7f6b25f
+]	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
+X	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
+?	at java.base/java.lang.reflect.Method.invoke(Method.java:558)
+Q	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:347)
+I	at java.base/java.security.AccessController.doPrivileged(Native Method)
+T	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:338)
+S	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:289)
+Q	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92)
+K	at io.netty.channel.nio.NioEventLoop.newTaskQueue0(NioEventLoop.java:279)
+J	at io.netty.channel.nio.NioEventLoop.newTaskQueue(NioEventLoop.java:150)
+D	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:138)
+P	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)
+O	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:58)
+i	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:47)
+Y	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:86)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:81)
+M	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:68)
+R	at io.vertx.core.net.impl.transport.Transport.eventLoopGroup(Transport.java:153)
+<	at io.vertx.core.impl.VertxImpl.<init>(VertxImpl.java:143)
+:	at io.vertx.core.impl.VertxImpl.vertx(VertxImpl.java:92)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:40)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:32)
+H	at io.vertx.core.impl.VertxFactoryImpl.vertx(VertxFactoryImpl.java:27)
+-	at io.vertx.core.Vertx.vertx(Vertx.java:75)
+8	at io.vertx.reactivex.core.Vertx.vertx(Vertx.java:127)
+M	at io.vertx.junit5.VertxExtension$ScopedObject.get(VertxExtension.java:266)
+C	at io.vertx.junit5.VertxExtension.unpack(VertxExtension.java:135)
+T	at io.vertx.junit5.VertxExtension.getOrCreateScopedObject(VertxExtension.java:130)
+Q	at io.vertx.junit5.VertxExtension.retrieveRxJava2Vertx(VertxExtension.java:362)
+M	at io.vertx.junit5.VertxExtension.resolveParameter(VertxExtension.java:111)
+f	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameter(ExecutableInvoker.java:216)
+g	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:183)
+g	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:144)
+[	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:96)
+~	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:205)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+u	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:201)
+l	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
+k	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+?	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+ö	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+?	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+ö	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+N	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+s	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+j	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+j	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+^	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+ó	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+v	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+r	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+`	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+f	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+W	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+µ	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+™	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+Ü	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+h	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+S	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+e	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+?	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+i	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+x	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+/	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+V	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+S	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+e	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+m	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+?	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+Y	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+ë	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+ë	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+X	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+k	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+Z	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+^	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+^	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+j	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+4	at java.base/java.lang.Thread.run(Thread.java:834)
+Ü16:20:49.896 [Test worker] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable
+g16:20:49.896 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+u16:20:49.916 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 536870912 bytes (maybe)
+u16:20:49.916 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+y16:20:49.919 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+q16:20:49.921 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
+Å16:20:49.924 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+p16:20:49.925 [Test worker] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
+m16:20:49.927 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+~16:20:49.937 [Test worker] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+©16:20:50.055 [Test worker] DEBUG io.netty.resolver.dns.DefaultDnsServerAddressStreamProvider - Default DNS servers: [/127.0.0.53:53] (sun.net.dns.ResolverConfiguration)
+[16:20:50.060 [Test worker] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
+_16:20:50.061 [Test worker] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
+i16:20:50.064 [Test worker] DEBUG io.netty.util.NetUtil - Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+\16:20:50.065 [Test worker] DEBUG io.netty.util.NetUtil - /proc/sys/net/core/somaxconn: 4096
+†16:20:50.224 [vert.x-eventloop-thread-0] DEBUG mysqlApp.MariadbVerticle - MariadbVerticle received message : select * from monsters where biome = 'Underground'
+~16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 5
+Ä16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 5
+|16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+z16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+Å16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+Ä16:20:50.312 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+Å16:20:50.317 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+Å16:20:50.318 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+å16:20:50.318 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+Ö16:20:50.318 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+à16:20:50.318 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+â16:20:50.319 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true
+ê16:20:50.319 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+16:20:50.364 [vert.x-eventloop-thread-0] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.processId: 12556 (auto-detected)
+ë16:20:50.367 [vert.x-eventloop-thread-0] DEBUG io.netty.channel.DefaultChannelId - -Dio.netty.machineId: f0:42:1c:ff:fe:f8:75:af (auto-detected)
+o16:20:50.413 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: pooled
+w16:20:50.415 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 0
+|16:20:50.416 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+w16:20:50.527 [vert.x-eventloop-thread-0] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
+w16:20:50.527 [vert.x-eventloop-thread-0] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+m16:20:50.528 [vert.x-eventloop-thread-0] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16
+e16:20:50.529 [vert.x-eventloop-thread-0] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
+y16:20:50.537 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+u16:20:50.537 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+¨16:20:50.539 [vert.x-eventloop-thread-0] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@598e4b38
+ö16:20:50.615 [vert.x-eventloop-thread-0] DEBUG mysqlApp.MariadbVerticle - Failure: SELECT command denied to user 'jared'@'127.0.0.1' for table 'monsters'
+j16:20:50.617 [vert.x-eventloop-thread-1] DEBUG TestAppInit - Test.queryCouchbase received reply : failure
+ó16:20:50.640 [vert.x-eventloop-thread-0] DEBUG io.netty.buffer.PoolThreadCache - Freed 6 thread-local buffer(s) from thread: vert.x-eventloop-thread-0

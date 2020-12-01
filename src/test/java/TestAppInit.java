@@ -1,37 +1,28 @@
 import io.vertx.reactivex.core.*;
 import io.vertx.junit5.VertxExtension;
 import io.vertx.junit5.VertxTestContext;
-import mysqlApp.MariadbVerticle;
-import mysqlApp.UserInputVerticle;
+import mysqlApp.Mysql;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.vertx.ext.unit.*;
 
-import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static mysqlApp.BusEvent.*;
 
 
 @ExtendWith(VertxExtension.class)
 public class TestAppInit {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestAppInit.class);
+
     //This tests if UserInputVerticle successfully deploys.
-    @Test
-    void verticle_deployed(Vertx vertx, VertxTestContext context) throws Throwable {
-        vertx.deployVerticle(new UserInputVerticle(), context.succeeding(id -> context.completeNow()));
-        context.completeNow();
-    }
+    //TODO: Redo all unit tests to not include vertx verticles.
 
     @Test
-    void startAdventure() throws Throwable {
+    void failStartAdventure() throws Throwable {
         try {
             Boolean didIntro = false;
             if (didIntro == false) {
-                System.out.println("Welcome Johan!\n Prepare for adventure!");
+                System.out.println("\nWelcome Johan!\n Prepare for adventure!");
                 didIntro = true;
             }
             System.out.println("\n-----------------------------------------------------------\n");
@@ -43,8 +34,8 @@ public class TestAppInit {
             System.out.println("3: Frost Caves");
             System.out.println("4: Femori Dungeon Keep");
             System.out.println("\n-----------------------------------------------------------\n");
-            Scanner scanner = new Scanner(System.in);
-            int choice = scanner.nextInt();
+            //TODO: Find out how to test with Scanner.
+            int choice = 15;
 
             if (choice == 1) {
                 System.out.println("biome1");
@@ -52,23 +43,22 @@ public class TestAppInit {
                 System.out.println("biome2");
             } else if (choice == 3) {
                 System.out.println("biome3");
-            } else {
+            } else if (choice == 4) {
                 System.out.println("biome4");
+            } else {
+                System.out.println("\nThat is invalid option.\n");
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             LOGGER.debug("error running TestAppInit.startAdventure()" + e.getMessage());
         }
     }
-
 }
 
-/*
-    @Test
-    void queryMysql(Vertx vertx, VertxTestContext context) throws Throwable {
-        vertx.rxDeployVerticle(new MariadbVerticle())
+        /*
+    void queryMysql() throws Throwable {
+        new Mysql.handleInput("Underground");
             .subscribe(e -> {
-                    vertx.eventBus().rxRequest(mariadbRetrieve.name(), "")
+                    vertx.eventBus().rxRequest(mariadbRetrieve.name(), "select * from monsters where biome = 'Underground'")
                         .subscribe(ar -> {
                                 LOGGER.debug("Test.queryCouchbase received reply : " + ar.body());
                                 context.completeNow();
@@ -84,7 +74,13 @@ public class TestAppInit {
                 });
     }
 
+    @Test
+    void retrieveMonsterList(Vertx vertx, VertxTestContext context) throws Throwable {
 
+    }
+
+}
+    /*
     @Test
     void insertMysql(Vertx vertx, VertxTestContext context) throws Throwable {
         vertx.rxDeployVerticle(new MariadbVerticle())

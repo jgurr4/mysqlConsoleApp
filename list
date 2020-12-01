@@ -1,0 +1,32 @@
+
+Biomes:
+
+Aquatic    
+Tundra     
+Desert     
+Swamp      
+Mountains  
+Forest     
+Underground
+Jungle     
+Rocky      
+Urban      
+Void       
+Grassland 
+
+attack types:
+
+crushing
+piercing
+earth
+lightning
+poison
+fire
+ice
+water
+wind
+light
+shadow
+
+Figure out how to do multiple strengths and weaknesses in a column for a monster. 
+Because some monsters have more than one type of attack they are strong against, and more than one type of attack they are weak against.
