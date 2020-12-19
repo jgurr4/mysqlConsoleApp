@@ -1,1 +1,1 @@
-docker run --rm --net=host -v ~/mysqlConsoleApp/mysqldata:/var/lib/mysql -v ~/mysqlConsoleApp/sqlscripts:/docker-entrypoint-initdb.d --name mysql -e MYSQL_ROOT_PASSWORD=super03 -d mysql --secure-file-priv=/var/lib/mysql 
+docker run --rm --net=host -v ~/mysqlConsoleApp/mysqldata:/var/lib/mysql -v ~/mysqlConsoleApp/sqlscripts:/docker-entrypoint-initdb.d --name mysql -e MYSQL_ROOT_PASSWORD=super03 -d mysql:8 --secure-file-priv=/var/lib/mysql 
