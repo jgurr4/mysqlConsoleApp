@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Scanner;
 
-import static mysqlApp.BusEvent.*;
 
 public class StartApp {
 
@@ -72,38 +71,3 @@ public class StartApp {
     }
 
 }
-            /*
-            (e -> {
-                    if (e.body() != null) {
-                        result.append(e.body());
-                        LOGGER.debug("UserInputVerticle received reply: " + e.body());
-                    } else {
-                        LOGGER.debug("Mysql Query failure for : " + biome);
-                    }
-                },
-                err -> {
-                    LOGGER.debug("Verticle Failed to communicate " + err.getMessage());
-                }
-            );
-        return result.toString();
-    }
-
-
-
-             */
-
-
-/*
-//This was my query test.
-        final EventBus eb = vertx.eventBus();
-
-        final Scanner input = new Scanner(System.in);
-        String proceed = "y";
-        while (proceed == "y") {
-            System.out.println("Enter your first query: EXAMPLES: select * from monsters limit 100;");
-            String query = input.nextLine();
-            sendInput(eb, query);
-            System.out.println("Do you have any more queries? y/n ");
-            proceed = input.next();
-        }
-*/

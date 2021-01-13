@@ -1,13 +1,9 @@
-import io.vertx.reactivex.core.*;
-import io.vertx.junit5.VertxExtension;
-import io.vertx.junit5.VertxTestContext;
 import mysqlApp.Mysql;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static mysqlApp.BusEvent.*;
 
 
 @ExtendWith(VertxExtension.class)
@@ -53,57 +49,4 @@ public class TestAppInit {
         }
     }
 }
-
-        /*
-    void queryMysql() throws Throwable {
-        new Mysql.handleInput("Underground");
-            .subscribe(e -> {
-                    vertx.eventBus().rxRequest(mariadbRetrieve.name(), "select * from monsters where biome = 'Underground'")
-                        .subscribe(ar -> {
-                                LOGGER.debug("Test.queryCouchbase received reply : " + ar.body());
-                                context.completeNow();
-                            },
-                            err -> {
-                                LOGGER.debug("Communication between Test.queryCouchbase error : " + err.getMessage());
-                                context.failNow(err);
-                            });
-                },
-                err -> {
-                    LOGGER.debug("TestCrawlInit.queryCouchbase issue deploying verticle : " + err.getMessage());
-                    context.failNow(err);
-                });
-    }
-
-    @Test
-    void retrieveMonsterList(Vertx vertx, VertxTestContext context) throws Throwable {
-
-    }
-
-}
-    /*
-    @Test
-    void insertMysql(Vertx vertx, VertxTestContext context) throws Throwable {
-        vertx.rxDeployVerticle(new MariadbVerticle())
-            .subscribe(e -> {
-                    vertx.eventBus().rxRequest(mariadbCreate.name(), "{\"key\":\"value\",\"key\":\"value\"}")
-                        .subscribe(ar -> {
-                                if (ar.body() == null) {
-                                    LOGGER.debug("Couchbase successfully inserted document.");
-                                } else {
-                                    LOGGER.debug("Couchbase failed to insert document : " + ar.body());
-                                }
-                                context.completeNow();
-                            },
-                            err -> {
-                                LOGGER.debug("Communication between Test.queryCouchbase error : " + err.getMessage());
-                                context.failNow(err);
-                            });
-                },
-                err -> {
-                    LOGGER.debug("TestCrawlInit.insertCouchbase issue communicating with " +
-                        "couchbase verticle. : " + err.getCause());
-                    context.failNow(err);
-                });
-    }
-*/
 

@@ -3,6 +3,7 @@ package mysqlApp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,29 +11,33 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Properties;
 
-import static mysqlApp.BusEvent.*;
 
 public class Mysql {
 
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Mysql.class);
 
-    public static String handleInput(String biome) throws SQLException {
+    public static String handleInput(String biome) throws SQLException, IOException {
         Statement stmt = null;
         ResultSet rs = null;
         Connection conn = null;
         ArrayList<String> abilities = new ArrayList<String>();
+        Properties config = new Properties();
+        config.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+
+        String url = config.getProperty("url");
+        String username = config.getProperty("username");
+        String password = config.getProperty("password");
+
 
         try {
-            conn =
-                DriverManager.getConnection("jdbc:mysql://localhost/monster?" +
-                    "user=jared&password=super03");
+            conn = DriverManager.getConnection("" + url + username + password);
             stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT * FROM monsterList where biome = " + biome);
 
-            // or alternatively, if you don't know ahead of time that
-            // the query will be a SELECT...
+            //Non-select statements use stmt.execute():
 //            if (stmt.execute("SELECT foo FROM bar")) {
 //                rs = stmt.getResultSet();
 //            }
@@ -49,7 +54,7 @@ public class Mysql {
             String desc = rs.getString("description");
             abilities.addAll(Arrays.asList(rs.getString("physical a"), rs.getString("physical b"), rs.getString("magical a"), rs.getString("magical b"), rs.getString("special")));
             String result = mName + ", " + size + ", " + exp + ", " + hp + ", " + def + ", " + weakTo + ", " + immunity
-                + ", " + levelRange + ", " + desc + ", " + abilities;
+                    + ", " + levelRange + ", " + desc + ", " + abilities;
             System.out.println(result);
             return result;
 
