@@ -89,10 +89,4 @@ public class Mysql {
         }
         return rs.toString();
     }
-
-    public static String documentHandler(String biome) {
-
-        String sm = "something" + biome;
-        return sm;
-    }
 }
